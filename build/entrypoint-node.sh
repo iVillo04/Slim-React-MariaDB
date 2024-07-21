@@ -5,5 +5,6 @@ if [ ! -f package.json ]; then
   rm .gitkeep
   npx -y create-react-app . 
 fi
+npm install react-bootstrap bootstrap
 npm install
 npm start
