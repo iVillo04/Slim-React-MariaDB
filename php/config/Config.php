@@ -16,9 +16,9 @@ class Config
         'driver' => 'mysql',
         'host' => 'mariadb',
         'port' => 3306,
-        'schema' => 'init',
-        'username' => 'root',
-        'password' => 'root'
+        'schema' => '',
+        'username' => '',
+        'password' => ''
     ];
 
     static $cors_domain = 'http://localhost:3000';
