@@ -28,7 +28,7 @@ services:
     ports:
       - 3306:3306
     volumes:
-      - "./mysql:/var/lib/mysql"
+      - "./mariadb:/var/lib/mysql"
       - "./docker/init.sql:/docker-entrypoint-initdb.d/init.sql"
 
   react:
