@@ -8,7 +8,8 @@
 
 # Database
 ### Import del database
-Puoi popolare il database sin dalla build con docker inserendo l'esport nel file **docker/init.sql**
+Puoi popolare il database sin dalla build con docker inserendo CREATE TABLEs e INSERTs nel file **docker/init.sql**.
+(Non è necessario CREATE DATABASE).
 
 ### Impostazioni
 Puoi scegliere la password dell'**utente root** ed il nome del db creato con **init.sql** dal **docker-compose.yaml**
