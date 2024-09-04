@@ -1,11 +1,9 @@
-version: '3.8'
-
 services:
   web:
     container_name: web
     user: ${MY_UID}:${MY_GID}
     build:
-      context: ./build
+      context: ./docker
       dockerfile: Dockerfile.php
       args:
         UID: ${MY_UID}
@@ -19,26 +17,26 @@ services:
     container_name: mariadb
     user: ${MY_UID}:${MY_GID}
     build:
-      context: ./build
+      context: ./docker
       dockerfile: Dockerfile.mariadb
       args:
         UID: ${MY_UID}
         GID: ${MY_GID}
     environment:
-      - MARIADB_ROOT_PASSWORD=root
-      - MARIADB_DATABASE=init
+      - MARIADB_ROOT_PASSWORD=password_root
+      - MARIADB_DATABASE=nome_database
     ports:
       - 3306:3306
     volumes:
       - "./mysql:/var/lib/mysql"
-      - "./build/init.sql:/docker-entrypoint-initdb.d/init.sql"
+      - "./docker/init.sql:/docker-entrypoint-initdb.d/init.sql"
 
-  node:
-    container_name: node
+  react:
+    container_name: react
     user: ${MY_UID}:${MY_GID}
     build:
-      context: ./build
-      dockerfile: Dockerfile.node
+      context: ./docker
+      dockerfile: Dockerfile.react
       args:
         UID: ${MY_UID}
         GID: ${MY_GID}

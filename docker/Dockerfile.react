@@ -2,8 +2,8 @@ FROM node
 ARG UID
 ARG GID
 EXPOSE 3000
-ADD entrypoint-node.sh /entrypoint-node.sh
+ADD entrypoint-react.sh /entrypoint-react.sh
 RUN groupadd -f user -g$GID
 RUN adduser --disabled-password --uid $UID --gid $GID --gecos "" user || true
-RUN chmod +x /entrypoint-node.sh
-CMD ["/entrypoint-node.sh"]
+RUN chmod +x /entrypoint-react.sh
+CMD ["/entrypoint-react.sh"]
