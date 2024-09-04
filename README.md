@@ -6,6 +6,21 @@
     - il frontend React sarà disponibile su http://localhost:3000.
     - Il database mariaDB sarà accessibile su localhost:3306.
 
+# Backend
+PHP 8.2 con il seguente **composer.json**:
+``` JSON
+{
+    "require": {
+        "slim/slim": "^4.14.0",
+        "slim/psr7": "^1.7.0",
+        "mustache/mustache": "^2.14.0"
+    }
+}
+```
+
+# Frontend
+NODE.JS con React e Bootstrap
+
 # Database
 ### Import del database
 Puoi popolare il database sin dalla build con docker inserendo CREATE TABLEs e INSERTs nel file **docker/init.sql**.
