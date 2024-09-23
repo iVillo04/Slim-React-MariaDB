@@ -7,7 +7,9 @@ class MainController
 {
   public function status(Request $request, Response $response, $args)
   {
-    $response->getBody()->write(json_encode(["status" => "online"]));
+    $view = new MustacheView();
+    $view->setData(["status" => "online"]);
+    $response->getBody()->write($view->render('status','.json'));
     return $response->withHeader("Content-type", "application/json")->withStatus(200);
   }
 }

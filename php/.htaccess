@@ -1,5 +1,8 @@
-RewriteEngine on  
+RewriteEngine on
 RewriteBase /
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
+
+# Escludi tutte le richieste che puntano alla cartella /public
+RewriteCond %{REQUEST_URI} !^/public/
+
+# Riscrivi tutte le altre richieste su index.php
 RewriteRule ^(.*)$ index.php [QSA,L]

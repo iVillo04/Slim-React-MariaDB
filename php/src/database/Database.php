@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * Classe Singleton per il Database
+ * (Utilizza PDO)
+ */
 class Database extends PDO
 {
     private static $instance;
@@ -18,7 +22,7 @@ class Database extends PDO
 
     public static function getInstance()
     {
-        if (!isset($instance))
+        if (!isset(self::$instance))
             $instance = new Database(
                 Config::$db['driver'],
                 Config::$db['host'],
@@ -27,6 +31,6 @@ class Database extends PDO
                 Config::$db['username'],
                 Config::$db['password']
             );
-        return $instance;
+        return self::$instance;
     }
 }

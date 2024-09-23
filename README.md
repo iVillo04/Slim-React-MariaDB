@@ -1,6 +1,7 @@
 # Avvio
 1. **Avviare l'ambiente di sviluppo**: Nella root del progetto, esegui:
     - Linux: `MY_UID=$(id -u) MY_GID=$(id -g) docker compose up`
+    - Senza node.js: `MY_UID=$(id -u) MY_GID=$(id -g) docker compose up web mariadb`
 2. **Accedere ai servizi**:
     - Il backend PHP sarà disponibile su http://localhost:8080.
     - il frontend React sarà disponibile su http://localhost:3000.
